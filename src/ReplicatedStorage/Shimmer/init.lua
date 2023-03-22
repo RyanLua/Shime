@@ -56,7 +56,7 @@ local function createShimmer(parent): Frame
 	local shimmer = Instance.new("ImageLabel")
 	shimmer.Name = "Shimmer"
 	shimmer.BackgroundTransparency = 1
-	shimmer.Size = UDim2.new(1, 0, 2, 0)
+	shimmer.Size = UDim2.new(1, 0, 1, 0)
 	shimmer.Position = UDim2.new(-1, 0, 0, 0)
 	shimmer.Image = "rbxasset://textures/ui/LuaApp/graphic/shimmer_darkTheme.png"
 	shimmer.BorderSizePixel = 0
@@ -69,6 +69,7 @@ end
 -- Playback state of the shimmer
 Shimmer.IsPlaying = false
 Shimmer.IsPaused = false
+Shimmer.IsCompleted = false
 
 -- Create a new Shimmer object
 function Shimmer.new(
@@ -112,6 +113,7 @@ end
 function Shimmer:_TweenCompleted()
 	self.IsPlaying = false
 	self.IsPaused = false
+	self.IsCompleted = true
 	self._shimmer.Visible = false
 end
 
@@ -119,22 +121,26 @@ end
 function Shimmer:Play()
 	self.IsPlaying = true
 	self.IsPaused = false
+	self.IsCompleted = false
 	self._shimmer.Visible = true
 	self._tween:Play()
 end
 
 -- Pause shimmering
 function Shimmer:Pause()
-	self.IsPlaying = false
-	self.IsPaused = true
-	self._shimmer.Visible = true
-	self._tween:Pause()
+	if not self.IsCompleted then
+		self.IsPlaying = false
+		self.IsPaused = true
+		self._shimmer.Visible = true
+		self._tween:Pause()
+	end
 end
 
 -- Stop shimmering
 function Shimmer:Cancel()
 	self.IsPlaying = false
 	self.IsPaused = false
+	self.IsCompleted = true
 	self._tween:Cancel()
 	self._shimmer.Visible = false
 end
