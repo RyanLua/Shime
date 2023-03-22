@@ -32,18 +32,25 @@ Shimmer.__index = Shimmer
 local TweenService = game:GetService("TweenService")
 
 -- Create a shimmer frame and return it
-local function createShimmer(parent: GuiObject?): Frame
+local function createShimmer(parent): Frame
 	-- Create a new frame to hold the shimmer
-	local shimmerFrame = Instance.new("Frame")
-	shimmerFrame.Name = "ShimmerFrame"
-	shimmerFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	shimmerFrame.BackgroundTransparency = 0.7
-	shimmerFrame.ClipsDescendants = true
-	shimmerFrame.Size = UDim2.new(1, 0, 1, 0)
-	shimmerFrame.BorderSizePixel = 0
-	shimmerFrame.Visible = false
-	shimmerFrame.Parent = parent
-	shimmerFrame.ZIndex = 8
+	local frame = Instance.new("Frame")
+	frame.Name = "ShimmerFrame"
+	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	frame.BackgroundTransparency = 0.7
+	frame.ClipsDescendants = true
+	frame.Size = UDim2.new(1, 0, 1, 0)
+	frame.BorderSizePixel = 0
+	frame.Visible = false
+	frame.ZIndex = 8
+	frame.Parent = parent
+
+	-- Create a UICorner to match parent if they have one
+	if parent:FindFirstChildOfClass("UICorner") then
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = parent.UICorner.CornerRadius
+		corner.Parent = frame
+	end
 
 	-- Create a new image label we will use to animate the shimmer
 	local shimmer = Instance.new("ImageLabel")
@@ -54,9 +61,9 @@ local function createShimmer(parent: GuiObject?): Frame
 	shimmer.Image = "rbxasset://textures/ui/LuaApp/graphic/shimmer_darkTheme.png"
 	shimmer.BorderSizePixel = 0
 	shimmer.ZIndex = 8
-	shimmer.Parent = shimmerFrame
+	shimmer.Parent = frame
 
-	return shimmerFrame
+	return frame
 end
 
 -- Playback state of the shimmer
