@@ -1,7 +1,7 @@
 --!strict
 
 --[[
-	Name: GuiShimmerClass
+	Name: Shime
 	Description: A class that creates a shimmering effect on a GuiObject.
 	By: @WinnersTakesAll on Roblox
 
@@ -41,8 +41,8 @@
 	limitations under the License.
 ]]
 
-local Shimmer = {}
-Shimmer.__index = Shimmer
+local Shime = {}
+Shime.__index = Shime
 
 local TweenService = game:GetService("TweenService")
 
@@ -82,12 +82,12 @@ local function createShimmer(parent): Frame
 end
 
 -- Playback state of the shimmer
-Shimmer.IsPlaying = false
-Shimmer.IsPaused = false
-Shimmer.IsCompleted = false
+Shime.IsPlaying = false
+Shime.IsPaused = false
+Shime.IsCompleted = false
 
 -- Create a new Shimmer object
-function Shimmer.new(
+function Shime.new(
 	parent: GuiObject,
 	time: number?,
 	style: Enum.EasingStyle?,
@@ -96,7 +96,7 @@ function Shimmer.new(
 	reverses: boolean?,
 	delay: number?
 )
-	local self = setmetatable({}, Shimmer)
+	local self = setmetatable({}, Shime)
 
 	-- Constants for the shimmer animation
 	local EASING_TIME = time or 1 -- Time for shimmer animation
@@ -125,7 +125,7 @@ function Shimmer.new(
 end
 
 -- Setup tween completion callback
-function Shimmer:_TweenCompleted()
+function Shime:_TweenCompleted()
 	self.IsPlaying = false
 	self.IsPaused = false
 	self.IsCompleted = true
@@ -133,7 +133,7 @@ function Shimmer:_TweenCompleted()
 end
 
 -- Start shimmering
-function Shimmer:Play()
+function Shime:Play()
 	self.IsPlaying = true
 	self.IsPaused = false
 	self.IsCompleted = false
@@ -142,7 +142,7 @@ function Shimmer:Play()
 end
 
 -- Pause shimmering
-function Shimmer:Pause()
+function Shime:Pause()
 	if not self.IsCompleted then
 		self.IsPlaying = false
 		self.IsPaused = true
@@ -152,7 +152,7 @@ function Shimmer:Pause()
 end
 
 -- Stop shimmering
-function Shimmer:Cancel()
+function Shime:Cancel()
 	self.IsPlaying = false
 	self.IsPaused = false
 	self.IsCompleted = true
@@ -160,4 +160,4 @@ function Shimmer:Cancel()
 	self._shimmer.Visible = false
 end
 
-return Shimmer
+return Shime
