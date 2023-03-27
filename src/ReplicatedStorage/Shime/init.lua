@@ -3,30 +3,13 @@
 --[[
 	Name: Shime
 	Description: A class that creates a shimmering effect on a GuiObject.
-	By: @WinnersTakesAll on Roblox
+	By: @WinnersTakesAll on Roblox & @RyanLua on GitHub
 
-	Constructors:
-		new(parent: GuiObject)
-		new(parent: GuiObject, time: number, style: Enum.EasingStyle, direction: Enum.EasingDirection, repeatCount: number, reverses: boolean, delay: number)
-	Properties:
-		EasingDirection: Enum.EasingDirection
-		Time: number
-		DelayTime: number
-		RepeatCount: number
-		Reverses: boolean
-		EasingStyle: Enum.EasingStyle
-		IsPlaying: boolean
-		IsPaused: boolean
-	Methods:
-		Play(): void
-		Pause(): void
-		Cancel(): void
-	Events:
-		None
+	GitHub: https://github.com/RyanLua/Shime
 ]]
 
 --[[
-	Copyright 2023 WinnersTakesAll
+	Copyright 2023 RyanLua
 	
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -47,7 +30,7 @@ Shime.__index = Shime
 local TweenService = game:GetService("TweenService")
 
 -- Create a shimmer frame and return it
-local function createShimmer(parent): Frame
+local function createShimmer(parent: GuiObject): Frame
 	-- Create a new frame to hold the shimmer
 	local frame = Instance.new("Frame")
 	frame.Name = "ShimmerFrame"
@@ -94,7 +77,7 @@ function Shime.new(
 	direction: Enum.EasingDirection?,
 	repeatCount: number?,
 	reverses: boolean?,
-	delay: number?
+	delayTime: number?
 )
 	local self = setmetatable({}, Shime)
 
@@ -104,7 +87,7 @@ function Shime.new(
 	local EASING_DIRECTION = direction or Enum.EasingDirection.InOut -- Easing direction for easing style
 	local REPEAT_COUNT = repeatCount or -1 -- Repeat amount for shimmer (negative number means infinite)
 	local REVERSES = reverses or false -- Reverse direction of shimmer when it reaches the end
-	local DELAY_TIME = delay or 0 -- Delay between each shimmer
+	local DELAY_TIME = delayTime or 0 -- Delay between each shimmer
 
 	-- Create the shimmer frame and animation
 	self._shimmer = createShimmer(parent)
@@ -152,7 +135,7 @@ function Shime:Pause()
 end
 
 -- Stop shimmering
-function Shime:Cancel()
+function Shime:Stop()
 	self.IsPlaying = false
 	self.IsPaused = false
 	self.IsCompleted = true
