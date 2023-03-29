@@ -32,10 +32,14 @@ local TweenService = game:GetService("TweenService")
 
 -- Create a shimmer frame and return it
 local function createShimmer(parent: GuiObject): Frame
+	-- Constants for the shimmer frame
+	local SHIMMER_IMAGE = "rbxasset://textures/ui/LuaApp/graphic/shimmer_darkTheme.png"
+	local BACKGROUND_COLOR = Color3.fromRGB(0, 0, 0)
+
 	-- Create a new frame to hold the shimmer
 	local frame = Instance.new("Frame")
 	frame.Name = "ShimmerFrame"
-	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	frame.BackgroundColor3 = BACKGROUND_COLOR
 	frame.BackgroundTransparency = 0.7
 	frame.ClipsDescendants = true
 	frame.Size = UDim2.new(1, 0, 1, 0)
@@ -58,7 +62,7 @@ local function createShimmer(parent: GuiObject): Frame
 	shimmer.BackgroundTransparency = 1
 	shimmer.Size = UDim2.new(1, 0, 1, 0)
 	shimmer.Position = UDim2.new(-1, 0, 0, 0)
-	shimmer.Image = "rbxasset://textures/ui/LuaApp/graphic/shimmer_darkTheme.png"
+	shimmer.Image = SHIMMER_IMAGE
 	shimmer.Parent = frame
 
 	return frame
