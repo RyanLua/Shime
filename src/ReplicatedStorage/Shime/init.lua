@@ -2,6 +2,7 @@
 
 --[[
 	Name: Shime
+	Version: 0.1.0
 	Description: A class that creates a shimmering effect on a GuiObject.
 	By: @WinnersTakesAll on Roblox & @RyanLua on GitHub
 
@@ -38,9 +39,10 @@ local function createShimmer(parent: GuiObject): Frame
 	frame.BackgroundTransparency = 0.7
 	frame.ClipsDescendants = true
 	frame.Size = UDim2.new(1, 0, 1, 0)
+	frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	frame.BorderSizePixel = 0
 	frame.Visible = false
-	frame.ZIndex = 8
 	frame.Parent = parent
 
 	-- Create a UICorner to match parent if they have one
@@ -57,8 +59,6 @@ local function createShimmer(parent: GuiObject): Frame
 	shimmer.Size = UDim2.new(1, 0, 1, 0)
 	shimmer.Position = UDim2.new(-1, 0, 0, 0)
 	shimmer.Image = "rbxasset://textures/ui/LuaApp/graphic/shimmer_darkTheme.png"
-	shimmer.BorderSizePixel = 0
-	shimmer.ZIndex = 8
 	shimmer.Parent = frame
 
 	return frame
@@ -109,10 +109,7 @@ end
 
 -- Setup tween completion callback
 function Shime:_TweenCompleted()
-	self.IsPlaying = false
-	self.IsPaused = false
-	self.IsCompleted = true
-	self._shimmer.Visible = false
+	self:Stop()
 end
 
 -- Start shimmering
