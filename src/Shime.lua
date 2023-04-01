@@ -33,14 +33,14 @@ local TweenService = game:GetService("TweenService")
 -- Create a shimmer frame and return it
 local function createShimmer(parent: GuiObject): Frame
 	-- Constants for the shimmer frame
-	local SHIMMER_IMAGE = "rbxasset://textures/ui/LuaApp/graphic/shimmer_darkTheme.png"
-	local BACKGROUND_COLOR = Color3.fromRGB(0, 0, 0)
+	local COLOR = Color3.fromRGB(255, 255, 255)
+	local TRANSPARNCY = 0
 
 	-- Create a new frame to hold the shimmer
 	local frame = Instance.new("Frame")
 	frame.Name = "ShimmerFrame"
-	frame.BackgroundColor3 = BACKGROUND_COLOR
-	frame.BackgroundTransparency = 0.7
+	frame.BackgroundColor3 = COLOR
+	frame.BackgroundTransparency = TRANSPARNCY
 	frame.ClipsDescendants = true
 	frame.Size = UDim2.new(1, 0, 1, 0)
 	frame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -56,14 +56,20 @@ local function createShimmer(parent: GuiObject): Frame
 		corner.Parent = frame
 	end
 
-	-- Create a new image label we will use to animate the shimmer
-	local shimmer = Instance.new("ImageLabel")
-	shimmer.Name = "Shimmer"
-	shimmer.BackgroundTransparency = 1
-	shimmer.Size = UDim2.new(1, 0, 1, 0)
-	shimmer.Position = UDim2.new(-1, 0, 0, 0)
-	shimmer.Image = SHIMMER_IMAGE
-	shimmer.Parent = frame
+	-- Create a new gradient for the frame
+	local gradient = Instance.new("UIGradient")
+	gradient.Name = "ShimmerGradient"
+	gradient.Rotation = 15
+	gradient.Color = ColorSequence.new(Color3.new(1, 1, 1))
+	gradient.Transparency = NumberSequence.new({
+		NumberSequenceKeypoint.new(0, 1),
+		NumberSequenceKeypoint.new(0.15, 1),
+		NumberSequenceKeypoint.new(0.5, 0.55),
+		NumberSequenceKeypoint.new(0.85, 1),
+		NumberSequenceKeypoint.new(1, 1),
+	})
+	gradient.Offset = Vector2.new(-1, 0)
+	gradient.Parent = frame
 
 	return frame
 end
@@ -98,9 +104,9 @@ function Shime.new(
 
 	-- Create the tween
 	self._tween = TweenService:Create(
-		self._shimmer:WaitForChild("Shimmer"),
+		self._shimmer:WaitForChild("ShimmerGradient"),
 		TweenInfo.new(EASING_TIME, EASING_STYLE, EASING_DIRECTION, REPEAT_COUNT, REVERSES, DELAY_TIME),
-		{ Position = UDim2.new(1, 0, 0, 0) }
+		{ Offset = Vector2.new(1, 0) }
 	)
 
 	-- Setup tween completion callback. Under default constants this will never be called as the tween will repeat infinitely
