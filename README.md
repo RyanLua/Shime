@@ -10,7 +10,7 @@
 Shimmer is a class required from the Shime module that allows you to easily create a shimmer effect on any GuiObject just like how Roblox does.
 </div>
 
-## Description
+## About
 
 Shime is a module that allows you to easily create a shimmer effect on any GuiObject. Shime is easy to use and extremely customizable. Shime achieves this by using a gradient that is animated to create the shimmer effect which is then applied to the GuiObject. It will automatically detect the GuiObject's size and position to apply the proper gradient to it and will clip to the guiobject's size including UI Corners.
 
