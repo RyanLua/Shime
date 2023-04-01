@@ -32,15 +32,11 @@ local TweenService = game:GetService("TweenService")
 
 -- Create a shimmer frame and return it
 local function createShimmer(parent: GuiObject): Frame
-	-- Constants for the shimmer frame
-	local COLOR = Color3.fromRGB(255, 255, 255)
-	local TRANSPARNCY = 0
-
 	-- Create a new frame to hold the shimmer
 	local frame = Instance.new("Frame")
 	frame.Name = "ShimmerFrame"
-	frame.BackgroundColor3 = COLOR
-	frame.BackgroundTransparency = TRANSPARNCY
+	frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	frame.BackgroundTransparency = 0
 	frame.ClipsDescendants = true
 	frame.Size = UDim2.new(1, 0, 1, 0)
 	frame.AnchorPoint = Vector2.new(0.5, 0.5)
