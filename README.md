@@ -18,7 +18,9 @@ Shime is a module that allows you to easily create a shimmer effect on any GuiOb
 
 ## Demo
 
-> <https://www.roblox.com/games/12865649978>
+> **Note**
+>
+> [Shimmer Demo](https://www.roblox.com/games/12865649978) has Content Sharing enabled. You can download the demo from the Roblox website by clicking the ellipsis (`...`)and selecting `Download`.
 
 We provide a open-source demo of Shime, you can [view the demo](https://www.roblox.com/games/12865649978) on Roblox. Feel free to use the demo as a reference for how to use Shime and modify it to your liking.
 
@@ -28,10 +30,17 @@ We provide a open-source demo of Shime, you can [view the demo](https://www.robl
 
 Shime has a lot of features that allow you to customize the shimmer effect to your liking. Here are some of the features:
 
-- Customizable Tween Animations
-- Open-source & Versatile
-- Clipping for UI Corners
-- Simple API with Documentation
+### Tween Animations
+
+Shime uses a TweenService to animate the gradient. This allows you to customize the animation to your liking. You can change the time, style, direction, repeat count, and delay time. You can change the TweenInfo of the animation by using the [`Shime.new`](Documentation#constructors) constructor and passing in the parameters you want to change.
+
+### Easy & Versatile
+
+Shime is extremely veratile, working on nearly all GuiObjects and allows easy customization through its class. You can use Shime on any GuiObject including TextButtons, TextLabels, ImageLabels, Frames, and more. Shime will automatically detect the GuiObject's size and position to apply the proper gradient to it and will clip to the guiobject's size including any UICorner instances.
+
+### Informative Wiki
+
+Shime has it's own GitHub Wiki with a included [Getting Started](Getting-Started) page that will help you get started with Shime which includes multiple installation methods, usage guides, and real world code samples. The wiki also includes a [Documentation](Documentation) page with all the methods, properties, and constructors for Shime.
 
 ## Installation
 
