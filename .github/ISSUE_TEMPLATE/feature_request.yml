@@ -23,7 +23,7 @@ body:
       placeholder: What is the problem?
       value: "I have an problem when [...]"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: solution
     attributes:
