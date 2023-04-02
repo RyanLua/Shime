@@ -4,6 +4,11 @@
     <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/80087248/229328903-68ae2d94-aa31-4651-bce3-45ae6159897c.png">
     <img src="https://user-images.githubusercontent.com/80087248/229268585-bc4ab425-809c-4a1e-a4c1-a693e861f455.png">
   </picture>
+  
+  <a href="https://github.com/RyanLua/Shime/releases"><img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/RyanLua/Shime?include_prereleases"></a>
+  <a href="https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/RyanLua/Shime"></a>
+  <a href="LICENSE.txt"><img alt="GitHub" src="https://img.shields.io/github/license/RyanLua/Shime"></a>
+  <a href=".github/workflows/StyLua.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/RyanLua/Shime/StyLua.yml"></a>
 </h1>
 
 <div align="center">
