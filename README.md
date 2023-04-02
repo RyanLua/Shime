@@ -1,7 +1,7 @@
 <h1 align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/80087248/229268959-a3cb2881-3022-4acf-afc5-b6007e94ff3d.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/80087248/229268958-1d45c5fe-9759-4f21-af33-9b21b1e4e68e.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/80087248/229328903-68ae2d94-aa31-4651-bce3-45ae6159897c.png">
     <img src="https://user-images.githubusercontent.com/80087248/229268585-bc4ab425-809c-4a1e-a4c1-a693e861f455.png">
   </picture>
 </h1>
@@ -14,7 +14,15 @@ Shimmer is a class required from the Shime module that allows you to easily crea
 
 Shime is a module that allows you to easily create a shimmer effect on any GuiObject. Shime is easy to use and extremely customizable. Shime achieves this by using a gradient that is animated to create the shimmer effect which is then applied to the GuiObject. It will automatically detect the GuiObject's size and position to apply the proper gradient to it and will clip to the guiobject's size including UI Corners.
 
-<img src="https://user-images.githubusercontent.com/80087248/229268404-127c8838-46b3-42cd-af84-a6e06a1e136e.gif" width="250" />
+<img src="https://user-images.githubusercontent.com/80087248/229268404-127c8838-46b3-42cd-af84-a6e06a1e136e.gif" height="300"/>
+
+## Demo
+
+> <https://www.roblox.com/games/12865649978>
+
+We provide a open-source demo of Shime, you can [view the demo](https://www.roblox.com/games/12865649978) on Roblox. Feel free to use the demo as a reference for how to use Shime and modify it to your liking.
+
+<a href="https://github.com/RyanLua/Shime/wiki"><img src="https://user-images.githubusercontent.com/80087248/229328112-31295fd2-c501-4415-9ef6-8d3b1047ec82.png" height="300" /></a>
 
 ## Features
 
@@ -96,5 +104,4 @@ If you see a **bug or want a feature**, please [open an issue](https://github.co
 
 ## License
 
-Signs is **licensed under** the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE.txt](LICENSE.txt) for details.
-
+Shime is **licensed under** the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE.txt](LICENSE.txt) for details.
