@@ -41,7 +41,7 @@ Shime has a lot of features that allow you to customize the shimmer effect to yo
 
 ### Tween Animations
 
-Shime uses a TweenService to animate the gradient. This allows you to customize the animation to your liking. You can change the time, style, direction, repeat count, and delay time. You can change the TweenInfo of the animation by using the [`Shime.new`](Documentation#constructors) constructor and passing in the parameters you want to change.
+Shime uses a TweenService to animate the gradient. This allows you to customize the animation to your liking. You can change the time, style, direction, repeat count, and delay time. You can change the TweenInfo of the animation by using the [`Shime.new`](https://github.com/RyanLua/Shime/wiki/Documentation#constructors-1) constructor and passing in the parameters you want to change.
 
 ### Easy & Versatile
 
@@ -49,13 +49,13 @@ Shime is extremely versatile, working on nearly all GuiObjects and allows easy c
 
 ### Informative Wiki
 
-Shime has its own GitHub Wiki with an included [Getting Started](Getting-Started) page that will help you get started with Shime which includes multiple installation methods, usage guides, and real-world code samples. The wiki also includes a [Documentation](Documentation) page with all the methods, properties, and constructors for Shime.
+Shime has its own GitHub Wiki with an included [Getting Started](https://github.com/RyanLua/Shime/wiki/Getting-Started) page that will help you get started with Shime which includes multiple installation methods, usage guides, and real-world code samples. The wiki also includes a [Documentation](https://github.com/RyanLua/Shime/wiki/Documentation) page with all the methods, properties, and constructors for Shime.
 
 ## Installation
 
 > **Note**
 >
-> Visit the [**Getting Started**](Getting-Started) page more information on installation. Below is a quick summary of the installation methods.
+> Visit the [**Installation**](https://github.com/RyanLua/Shime/wiki/Getting-Started#installation) page more information on installation. Below is a quick summary of the installation methods.
 
 Shime is easy to install. They are many ways to install Shime. The links below will take you to the installation method you want to use.
 
@@ -73,7 +73,7 @@ Shime is easy to install. They are many ways to install Shime. The links below w
 
 > **Note**
 >
-> Visit the [**Usage**](Usage) page more information on usage, including additional code samples.
+> Visit the [**Usage**](https://github.com/RyanLua/Shime/wiki/Getting-Started#usage) page more information on usage, including additional code samples.
 
 Shime is easy to use. The API is simple and easy to understand. Below is a simple code sample of how to create a shimmer effect on a GuiObject using Shime.
 
@@ -90,11 +90,11 @@ shimmer:Play()
 
 > **Note**
 >
-> Visit the [**Documentation**](Documentation) page more information on the Shime module and more details about Shime Constructors, Methods, and Properties.
+> Visit the [**Documentation**](https://github.com/RyanLua/Shime/wiki/Documentation) page more information on the Shime module and more details about Shime Constructors, Methods, and Properties.
 
 Shime has many methods and properties that allow you to customize the shimmer effect to your liking. Below is a summary of all the methods, properties, and constructors for Shime.
 
-### [Constructors](Documentation#constructors)
+### [Constructors](https://github.com/RyanLua/Shime/wiki/Documentation#constructors-1)
 
 | new(parent: [`GuiObject`](https://create.roblox.com/docs/reference/engine/classes/GuiObject)) |
 | :--- |
@@ -104,7 +104,7 @@ Shime has many methods and properties that allow you to customize the shimmer ef
 | :--- |
 | Returns a [`table`](https://create.roblox.com/docs/reference/engine/libraries/table) containing `Shimmer`'s metatable. Shimmers using specified parameters. |
 
-### [Properties](Documentation#properties)
+### [Properties](https://github.com/RyanLua/Shime/wiki/Documentation#properties-1)
 
 | Property | Details |
 | --- | --- |
@@ -112,19 +112,19 @@ Shime has many methods and properties that allow you to customize the shimmer ef
 | IsPaused: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` is not playing. |
 | IsPlaying: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` is playing. |
 
-### [Methods](Documentation#methods)
+### [Methods](https://github.com/RyanLua/Shime/wiki/Documentation#methods-1)
 
 | Stop(): `void` |
 | :--- |
-| The Stop function halts `Shimmer`. If [`Shimmer:Play()`](Documentation#play) is called again the `Shimmer` will resume interpolating towards their destination but take the full length of the time to do so. |
+| The Stop function halts `Shimmer`. If [`Shimmer:Play()`](https://github.com/RyanLua/Shime/wiki/Documentation#play) is called again the `Shimmer` will resume interpolating towards their destination but take the full length of the time to do so. |
 
 | Pause(): `void` |
 | :--- |
-| The Pause function halts `Shimmer`. If you call [`Shimmer:Play()`](Documentation#play) again, the shimmer resumes playback from the moment it was paused. |
+| The Pause function halts `Shimmer`. If you call [`Shimmer:Play()`](https://github.com/RyanLua/Shime/wiki/Documentation#play) again, the shimmer resumes playback from the moment it was paused. |
 
 | Play(): `void` |
 | :--- |
-The Play function starts `Shimmer`. Note that if a shimmer has already begun calling Play will have no effect unless the shimmer has finished or has been stopped (either by [`Shimmer:Stop()`](Documentation#stop) or [`Shimmer:Pause()`](Documentation#pause)). |
+The Play function starts `Shimmer`. Note that if a shimmer has already begun calling Play will have no effect unless the shimmer has finished or has been stopped (either by [`Shimmer:Stop()`](https://github.com/RyanLua/Shime/wiki/Documentation#stop) or [`Shimmer:Pause()`](https://github.com/RyanLua/Shime/wiki/Documentation#pause). |
 
 ## Contributing
 
