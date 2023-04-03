@@ -4,7 +4,7 @@
     <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/80087248/229328903-68ae2d94-aa31-4651-bce3-45ae6159897c.png">
     <img src="https://user-images.githubusercontent.com/80087248/229268585-bc4ab425-809c-4a1e-a4c1-a693e861f455.png">
   </picture>
-  
+
   <a href="https://github.com/RyanLua/Shime/releases"><img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/RyanLua/Shime?include_prereleases"></a>
   <a href="https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/RyanLua/Shime"></a>
   <a href="LICENSE.txt"><img alt="GitHub" src="https://img.shields.io/github/license/RyanLua/Shime"></a>
@@ -17,9 +17,13 @@ Shimmer is a class required from the Shime module that allows you to easily crea
 
 ## About
 
-Shime is a module that allows you to easily create a shimmer effect on any GuiObject. Shime is easy to use and extremely customizable. Shime achieves this by using a gradient that is animated to create the shimmer effect which is then applied to the GuiObject. It will automatically detect the GuiObject's size and position to apply the proper gradient to it and will clip to the guiobject's size including UI Corners.
+> **Note**
+>
+> Visit the [Shime Wiki](https://github.com/RyanLua/Shime/wiki) for more information about Shime, including installation, usage, and documentation.
 
-<img src="https://user-images.githubusercontent.com/80087248/229268404-127c8838-46b3-42cd-af84-a6e06a1e136e.gif" height="300"/>
+Shime is a module that allows you to easily create a shimmer effect on any [`GuiObject`](https://create.roblox.com/docs/reference/engine/classes/GuiObject). Shime is easy to use and extremely customizable. Shime achieves this by using a [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient) that is animated using a [`Tween`](https://create.roblox.com/docs/reference/engine/classes/Tween). Shime will detect the GuiObject's size and position to apply the proper gradient to it and will clip to the guiobject's size including [`UICorners`](https://create.roblox.com/docs/reference/engine/classes/UICorner).
+
+<img src="https://user-images.githubusercontent.com/80087248/229268404-127c8838-46b3-42cd-af84-a6e06a1e136e.gif" width="300"/>
 
 ## Demo
 
@@ -27,9 +31,9 @@ Shime is a module that allows you to easily create a shimmer effect on any GuiOb
 >
 > [Shimmer Demo](https://www.roblox.com/games/12865649978) has Content Sharing enabled. You can download the demo from the Roblox website by clicking the ellipsis (`...`)and selecting `Download`.
 
-We provide a open-source demo of Shime, you can [view the demo](https://www.roblox.com/games/12865649978) on Roblox. Feel free to use the demo as a reference for how to use Shime and modify it to your liking.
+We provide an open-source demo of Shime, you can [view the demo](https://www.roblox.com/games/12865649978) on Roblox. Feel free to use the demo as a reference for how to use Shime and modify it to your liking.
 
-<a href="https://github.com/RyanLua/Shime/wiki"><img src="https://user-images.githubusercontent.com/80087248/229328112-31295fd2-c501-4415-9ef6-8d3b1047ec82.png" height="300" /></a>
+<a href="https://www.roblox.com/games/12865649978"><img src="https://user-images.githubusercontent.com/80087248/229328112-31295fd2-c501-4415-9ef6-8d3b1047ec82.png" width="600"/></a>
 
 ## Features
 
@@ -41,27 +45,38 @@ Shime uses a TweenService to animate the gradient. This allows you to customize 
 
 ### Easy & Versatile
 
-Shime is extremely veratile, working on nearly all GuiObjects and allows easy customization through its class. You can use Shime on any GuiObject including TextButtons, TextLabels, ImageLabels, Frames, and more. Shime will automatically detect the GuiObject's size and position to apply the proper gradient to it and will clip to the guiobject's size including any UICorner instances.
+Shime is extremely versatile, working on nearly all GuiObjects and allows easy customization through its class. You can use Shime on any GuiObject including TextButtons, TextLabels, ImageLabels, Frames, and more. Shime will automatically detect the GuiObject's size and position to apply the proper gradient to it and will clip to the guiobject's size including any UICorner instances.
 
 ### Informative Wiki
 
-Shime has it's own GitHub Wiki with a included [Getting Started](Getting-Started) page that will help you get started with Shime which includes multiple installation methods, usage guides, and real world code samples. The wiki also includes a [Documentation](Documentation) page with all the methods, properties, and constructors for Shime.
+Shime has its own GitHub Wiki with an included [Getting Started](Getting-Started) page that will help you get started with Shime which includes multiple installation methods, usage guides, and real-world code samples. The wiki also includes a [Documentation](Documentation) page with all the methods, properties, and constructors for Shime.
 
 ## Installation
 
-Shime is easy to install. They are many ways to install Shime. You can learn more on how to install Shime by opening [Getting Started](Getting-Started) or by clicking the links below which will take you to the [wiki page](Home) for the installation method you want to use.
+> **Note**
+>
+> Visit the [**Getting Started**](Getting-Started) page more information on installation. Below is a quick summary of the installation methods.
+
+Shime is easy to install. They are many ways to install Shime. The links below will take you to the installation method you want to use.
 
 > **Warning**
 >
 > **Install from Roblox** and **Install from GitHub** will not allow for automatic updates including security updates. It is recommended to use the Require from Roblox method. Only use this method if you are planning to use a modified version of Shime.
 
 - [Require from Roblox](Getting-Started#require-from-roblox)
+  - [Shimmer Module Source - Creator Marketplace](https://create.roblox.com/marketplace/asset/12959615382)
 - [Install from Roblox](Getting-Started#install-from-roblox)
+  - [Shimmer - Creator Marketplace](https://create.roblox.com/marketplace/asset/12959615382)
 - [Install from GitHub](Getting-Started#install-from-github)
+  - [Shime - GitHub](https://github.com/RyanLua/Shime/releases)
 
 ## Usage
 
-Shime is easy to use. The API is simple and easy to understand. Please see [**Usage**](Usage) for more information as well as code samples of how to use Shime. Below is a simple example of how to create a shimmer effect on a GuiObject using Shime.
+> **Note**
+>
+> Visit the [**Usage**](Usage) page more information on usage, including additional code samples.
+
+Shime is easy to use. The API is simple and easy to understand. Below is a simple code sample of how to create a shimmer effect on a GuiObject using Shime.
 
 ```lua
 -- Require the Shime module
@@ -74,7 +89,11 @@ shimmer:Play()
 
 ## Documentation
 
-Shime has many methods and properties that allow you to customize the shimmer effect to your liking. Please see [**Documentation**](Documentation) for more information on the API. Below is a list of all the methods, properties, and constructors for Shime.
+> **Note**
+>
+> Visit the [**Documentation**](Documentation) page more information on the Shime module and more details about Shime Constructors, Methods, and Properties.
+
+Shime has many methods and properties that allow you to customize the shimmer effect to your liking. Below is a summary of all the methods, properties, and constructors for Shime.
 
 ### [Constructors](Documentation#constructors)
 
@@ -98,15 +117,15 @@ Shime has many methods and properties that allow you to customize the shimmer ef
 
 | Stop(): `void` |
 | :--- |
-| The Stop function halts `Shimmer`. If [`Shimmer:Play()`](#play) is called again the `Shimmer` will resume interpolating towards their destination but take the full length of the time to do so. |
+| The Stop function halts `Shimmer`. If [`Shimmer:Play()`](Documentation#play) is called again the `Shimmer` will resume interpolating towards their destination but take the full length of the time to do so. |
 
 | Pause(): `void` |
 | :--- |
-| The Pause function halts `Shimmer`. If you call [`Shimmer:Play()`](#play) again, the shimmer resumes playback from the moment it was paused. |
+| The Pause function halts `Shimmer`. If you call [`Shimmer:Play()`](Documentation#play) again, the shimmer resumes playback from the moment it was paused. |
 
 | Play(): `void` |
 | :--- |
-The Play function starts `Shimmer`. Note that if a shimmer has already begun calling Play will have no effect unless the shimmer has finished or has been stopped (either by [`Shimmer:Stop()`](#stop) or [`Shimmer:Pause()`](#pause)). |
+The Play function starts `Shimmer`. Note that if a shimmer has already begun calling Play will have no effect unless the shimmer has finished or has been stopped (either by [`Shimmer:Stop()`](Documentation#stop) or [`Shimmer:Pause()`](Documentation#pause)). |
 
 ## Contributing
 
@@ -118,4 +137,4 @@ If you see a **bug or want a feature**, please [open an issue](https://github.co
 
 ## License
 
-Shime is **licensed under** the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE.txt](LICENSE.txt) for details.
+Shime is **licensed under** [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE.txt](LICENSE.txt) for details.
