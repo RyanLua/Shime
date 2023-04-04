@@ -59,13 +59,8 @@ Shime has its own GitHub Wiki with an included [Getting Started](https://github.
 
 Shime is easy to install. They are many ways to install Shime. The links below will take you to the installation method you want to use.
 
-> **Warning**
->
-> **Install from Roblox** and **Install from GitHub** will not allow for automatic updates including security updates. It is recommended to use the Require from Roblox method. Only use this method if you are planning to use a modified version of Shime.
-
 | Install Method | Asset Link |
 | :--- | :--- |
-| [Require from Roblox](Getting-Started#require-from-roblox) | [Shimmer Module Source - Creator Marketplace](https://create.roblox.com/marketplace/asset/12959615382) |
 | [Install from Roblox](Getting-Started#install-from-roblox) | [Shimmer - Creator Marketplace](https://create.roblox.com/marketplace/asset/12959615382) |
 | [Install from GitHub](Getting-Started#install-from-github) | [Shime - GitHub](https://github.com/RyanLua/Shime/releases)
 
