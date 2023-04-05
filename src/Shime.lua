@@ -115,7 +115,8 @@ end
 
 -- Setup tween completion callback
 function Shime:_TweenCompleted()
-	self:Stop()
+	self._frame.Visible = false
+	self.PlaybackState = Enum.PlaybackState.Completed
 end
 
 -- Get the shimmer frame
@@ -135,26 +136,25 @@ end
 
 -- Start shimmering
 function Shime:Play()
-	self.PlaybackState = self._tween.PlaybackState
+	self.PlaybackState = Enum.PlaybackState.Begin
+	self._frame.Visible = true
 	self._tween:Play()
-	self.PlaybackState = self._tween.PlaybackState
+	self.PlaybackState = Enum.PlaybackState.Playing
 end
 
 -- Pause shimmering
 function Shime:Pause()
-	if not self.IsCompleted then
-		self._frame.Visible = true
-		self.PlaybackState = self._tween.PlaybackState
+	if self.PlaybackState == Enum.PlaybackState.Playing then
 		self._tween:Pause()
-		self.PlaybackState = self._tween.PlaybackState
+		self.PlaybackState = Enum.PlaybackState.Paused
 	end
 end
 
--- Stop shimmering
-function Shime:Stop()
-	self.PlaybackState = self._tween.PlaybackState
+-- Cancel shimmering
+function Shime:Cancel()
 	self._tween:Cancel()
 	self._frame.Visible = false
+	self.PlaybackState = Enum.PlaybackState.Cancelled
 end
 
 return Shime
