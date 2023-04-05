@@ -34,7 +34,7 @@ local TweenService = game:GetService("TweenService")
 local function createShimmer(parent: GuiObject): Frame
 	-- Create a new frame to hold the shimmer
 	local frame = Instance.new("Frame")
-	frame.Name = "ShimmerFrame"
+	frame.Name = "UIShimmer"
 	frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	frame.BackgroundTransparency = 0
 	frame.ClipsDescendants = true
@@ -54,7 +54,6 @@ local function createShimmer(parent: GuiObject): Frame
 
 	-- Create a new gradient for the frame
 	local gradient = Instance.new("UIGradient")
-	gradient.Name = "ShimmerGradient"
 	gradient.Rotation = 15
 	gradient.Color = ColorSequence.new(Color3.new(1, 1, 1))
 	gradient.Transparency = NumberSequence.new({
@@ -96,12 +95,13 @@ function Shime.new(
 	local DELAY_TIME = delayTime or 0 -- Delay between each shimmer
 
 	-- Create the shimmer frame and animation
-	self._frame = createShimmer(parent)
-	self._gradient = self._frame:WaitForChild("ShimmerGradient")
+	local shimmer = createShimmer(parent)
+	self._frame = shimmer
+	self._gradient = shimmer:FindFirstChildOfClass("UIGradient")
 
 	-- Create the tween
 	self._tween = TweenService:Create(
-		self._frame:WaitForChild("ShimmerGradient"),
+		self._gradient,
 		TweenInfo.new(EASING_TIME, EASING_STYLE, EASING_DIRECTION, REPEAT_COUNT, REVERSES, DELAY_TIME),
 		{ Offset = Vector2.new(1, 0) }
 	)
