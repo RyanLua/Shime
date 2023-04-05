@@ -96,11 +96,12 @@ function Shime.new(
 	local DELAY_TIME = delayTime or 0 -- Delay between each shimmer
 
 	-- Create the shimmer frame and animation
-	self._shimmer = createShimmer(parent)
+	self._frame = createShimmer(parent)
+	self._gradient = self._frame:WaitForChild("ShimmerGradient")
 
 	-- Create the tween
 	self._tween = TweenService:Create(
-		self._shimmer:WaitForChild("ShimmerGradient"),
+		self._frame:WaitForChild("ShimmerGradient"),
 		TweenInfo.new(EASING_TIME, EASING_STYLE, EASING_DIRECTION, REPEAT_COUNT, REVERSES, DELAY_TIME),
 		{ Offset = Vector2.new(1, 0) }
 	)
@@ -118,12 +119,22 @@ function Shime:_TweenCompleted()
 	self:Stop()
 end
 
+-- Get the shimmer frame
+function Shime:GetFrame(): Frame
+	return self._frame
+end
+
+-- Get the shimmer gradient
+function Shime:GetGradient(): UIGradient
+	return self._gradient
+end
+
 -- Start shimmering
 function Shime:Play()
 	self.IsPlaying = true
 	self.IsPaused = false
 	self.IsCompleted = false
-	self._shimmer.Visible = true
+	self._frame.Visible = true
 	self._tween:Play()
 end
 
@@ -132,7 +143,7 @@ function Shime:Pause()
 	if not self.IsCompleted then
 		self.IsPlaying = false
 		self.IsPaused = true
-		self._shimmer.Visible = true
+		self._frame.Visible = true
 		self._tween:Pause()
 	end
 end
@@ -143,7 +154,7 @@ function Shime:Stop()
 	self.IsPaused = false
 	self.IsCompleted = true
 	self._tween:Cancel()
-	self._shimmer.Visible = false
+	self._frame.Visible = false
 end
 
 return Shime
