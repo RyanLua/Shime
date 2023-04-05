@@ -64,9 +64,9 @@ local function createShimmer(parent: GuiObject): Frame
 		if frame.Parent:FindFirstChildOfClass("UIPadding") then
 			local padding = frame.Parent:FindFirstChildOfClass("UIPadding")
 			frame.Size = UDim2.new(
-				1,
+				1 / (1 - (padding.PaddingLeft.Scale + padding.PaddingRight.Scale)),
 				padding.PaddingLeft.Offset + padding.PaddingRight.Offset,
-				1,
+				1 / (1 - padding.PaddingTop.Scale - padding.PaddingBottom.Scale),
 				padding.PaddingTop.Offset + padding.PaddingBottom.Offset
 			)
 		end
