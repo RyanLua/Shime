@@ -45,12 +45,34 @@ local function createShimmer(parent: GuiObject): Frame
 	frame.Visible = false
 	frame.Parent = parent
 
-	-- Create a UICorner to match parent if they have one
-	if parent:FindFirstChildOfClass("UICorner") then
-		local corner = Instance.new("UICorner")
-		corner.CornerRadius = parent.UICorner.CornerRadius
-		corner.Parent = frame
+	-- Update the corner radius of the frame when the UICorner or Parent changes
+	local function updateCornerRadius()
+		if frame.Parent:FindFirstChildOfClass("UICorner") then
+			local corner = Instance.new("UICorner")
+			corner.CornerRadius = parent.UICorner.CornerRadius
+			corner.Parent = frame
+			corner:GetPropertyChangedSignal("CornerRadius"):Connect(function()
+				frame.Parent.UICorner.CornerRadius = corner.CornerRadius
+			end)
+		end
 	end
+	frame:GetPropertyChangedSignal("Parent"):Connect(updateCornerRadius)
+	updateCornerRadius()
+
+	-- Update the size of the frame when the UIPadding changes
+	local function updatePaddingOffset()
+		if frame.Parent:FindFirstChildOfClass("UIPadding") then
+			local padding = frame.Parent:FindFirstChildOfClass("UIPadding")
+			frame.Size = UDim2.new(
+				1,
+				padding.PaddingLeft.Offset + padding.PaddingRight.Offset,
+				1,
+				padding.PaddingTop.Offset + padding.PaddingBottom.Offset
+			)
+		end
+	end
+	frame:GetPropertyChangedSignal("Parent"):Connect(updatePaddingOffset)
+	updatePaddingOffset()
 
 	-- Create a new gradient for the frame
 	local gradient = Instance.new("UIGradient")
