@@ -70,9 +70,7 @@ local function createShimmer(parent: GuiObject): Frame
 end
 
 -- Playback state of the shimmer
-Shime.IsPlaying = false
-Shime.IsPaused = false
-Shime.IsCompleted = false
+Shime.PlaybackState = nil
 
 -- Create a new Shimmer object
 function Shime.new(
@@ -137,28 +135,24 @@ end
 
 -- Start shimmering
 function Shime:Play()
-	self.IsPlaying = true
-	self.IsPaused = false
-	self.IsCompleted = false
-	self._frame.Visible = true
+	self.PlaybackState = self._tween.PlaybackState
 	self._tween:Play()
+	self.PlaybackState = self._tween.PlaybackState
 end
 
 -- Pause shimmering
 function Shime:Pause()
 	if not self.IsCompleted then
-		self.IsPlaying = false
-		self.IsPaused = true
 		self._frame.Visible = true
+		self.PlaybackState = self._tween.PlaybackState
 		self._tween:Pause()
+		self.PlaybackState = self._tween.PlaybackState
 	end
 end
 
 -- Stop shimmering
 function Shime:Stop()
-	self.IsPlaying = false
-	self.IsPaused = false
-	self.IsCompleted = true
+	self.PlaybackState = self._tween.PlaybackState
 	self._tween:Cancel()
 	self._frame.Visible = false
 end
