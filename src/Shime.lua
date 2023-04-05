@@ -98,6 +98,7 @@ function Shime.new(
 	local shimmer = createShimmer(parent)
 	self._frame = shimmer
 	self._gradient = shimmer:FindFirstChildOfClass("UIGradient")
+	self._corner = shimmer:FindFirstChildOfClass("UICorner")
 
 	-- Create the tween
 	self._tween = TweenService:Create(
@@ -127,6 +128,11 @@ end
 -- Get the shimmer gradient
 function Shime:GetGradient(): UIGradient
 	return self._gradient
+end
+
+-- Get the ui corner of the shimmer frame
+function Shime:GetCorner(): UICorner
+	return self._corner
 end
 
 -- Start shimmering
