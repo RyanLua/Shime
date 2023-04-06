@@ -2,7 +2,7 @@
 
 --[[
 	Name: Shime
-	Version: 0.1.0
+	Version: 1.0.0
 	Description: A class that creates a shimmering effect on a GuiObject.
 	By: @WinnersTakesAll on Roblox & @RyanLua on GitHub
 
@@ -48,12 +48,15 @@ local function createShimmer(parent: GuiObject): Frame
 	-- Update the corner radius of the frame when the UICorner or Parent changes
 	local function updateCornerRadius()
 		if frame.Parent:FindFirstChildOfClass("UICorner") then
+			local parentCorner = frame.Parent:FindFirstChildOfClass("UICorner")
+
+			-- Create a new UICorner for the frame
 			local corner = Instance.new("UICorner")
-			corner.CornerRadius = parent.UICorner.CornerRadius
+			corner.CornerRadius = parentCorner.CornerRadius
 			corner.Parent = frame
-			corner:GetPropertyChangedSignal("CornerRadius"):Connect(function()
-				frame.Parent.UICorner.CornerRadius = corner.CornerRadius
-			end)
+
+			-- Update the corner radius of the frame when the UICorner changes
+			corner:GetPropertyChangedSignal("CornerRadius"):Connect(updateCornerRadius)
 		end
 	end
 	frame:GetPropertyChangedSignal("Parent"):Connect(updateCornerRadius)
@@ -63,12 +66,32 @@ local function createShimmer(parent: GuiObject): Frame
 	local function updatePaddingOffset()
 		if frame.Parent:FindFirstChildOfClass("UIPadding") then
 			local padding = frame.Parent:FindFirstChildOfClass("UIPadding")
-			frame.Size = UDim2.new(
-				1 / (1 - (padding.PaddingLeft.Scale + padding.PaddingRight.Scale)),
-				padding.PaddingLeft.Offset + padding.PaddingRight.Offset,
-				1 / (1 - padding.PaddingTop.Scale - padding.PaddingBottom.Scale),
-				padding.PaddingTop.Offset + padding.PaddingBottom.Offset
+
+			local widthScale = padding.PaddingLeft.Scale + padding.PaddingRight.Scale
+			local heightScale = padding.PaddingTop.Scale + padding.PaddingBottom.Scale
+			local widthOffset = padding.PaddingLeft.Offset + padding.PaddingRight.Offset
+			local heightOffset = padding.PaddingTop.Offset + padding.PaddingBottom.Offset
+			local heightDiffOffset = padding.PaddingTop.Offset - padding.PaddingBottom.Offset
+			local widthDiffOffset = padding.PaddingLeft.Offset - padding.PaddingRight.Offset
+			local widthSize = 1 / (1 - widthScale)
+			local heightSize = 1 / (1 - heightScale)
+
+			frame.Size = UDim2.new(widthSize, widthOffset, heightSize, heightOffset)
+
+			-- Update the position of the frame so it is centered
+			frame.Position = UDim2.new(
+				0.5,
+				-widthDiffOffset / 2,
+				0.5,
+				-heightDiffOffset / 2
 			)
+			print(frame.Position)
+
+			-- Update the padding offset when the UIPadding changes
+			padding:GetPropertyChangedSignal("PaddingLeft"):Connect(updatePaddingOffset)
+			padding:GetPropertyChangedSignal("PaddingRight"):Connect(updatePaddingOffset)
+			padding:GetPropertyChangedSignal("PaddingTop"):Connect(updatePaddingOffset)
+			padding:GetPropertyChangedSignal("PaddingBottom"):Connect(updatePaddingOffset)
 		end
 	end
 	frame:GetPropertyChangedSignal("Parent"):Connect(updatePaddingOffset)
