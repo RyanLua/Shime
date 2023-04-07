@@ -74,7 +74,7 @@ Shime is easy to use. The API is simple and easy to understand. Below is a simpl
 
 ```lua
 -- Require the Shime module
-local Shime = require(12958292783)
+local Shime = require(game.ReplicatedStorage.Shime)
 
 -- Create a new Shimmer and play it
 local shimmer = Shime.new(script.Parent)
