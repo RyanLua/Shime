@@ -102,12 +102,18 @@ Shime has many methods and properties that allow you to customize the shimmer ef
 ### [Properties](https://github.com/RyanLua/Shime/wiki/Documentation#properties-1)
 
 | Property | Details |
-| --- | --- |
-| IsCompleted: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` has completed. |
-| IsPaused: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` is not playing. |
-| IsPlaying: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` is playing. |
+| :--- | :--- |
+| PlaybackState: [`Enum.PlaybackState`](https://create.roblox.com/docs/reference/engine/enums/PlaybackState) | This read-only property will return [`Enum.PlaybackState`](https://create.roblox.com/docs/reference/engine/enums/PlaybackState). |
 
 ### [Methods](https://github.com/RyanLua/Shime/wiki/Documentation#methods-1)
+
+| GetFrame(): [`Frame`](https://create.roblox.com/docs/reference/engine/classes/Frame) |
+| :--- |
+| The GetFrame function returns the [`Frame`](https://create.roblox.com/docs/reference/engine/classes/Frame) that is used to create the shimmer effect. This frame can be customized after the shimmer is created.|
+
+| GetGradient(): [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient) |
+| :--- |
+| The GetGradient function returns the [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient) that is used to create the shimmer effect. This gradient can be customized after the shimmer is created. |
 
 | Stop(): `void` |
 | :--- |
