@@ -4,11 +4,11 @@
     <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/80087248/229328903-68ae2d94-aa31-4651-bce3-45ae6159897c.png">
     <img src="https://user-images.githubusercontent.com/80087248/229268585-bc4ab425-809c-4a1e-a4c1-a693e861f455.png">
   </picture>
-
-  <a href="https://github.com/RyanLua/Shime/releases"><img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/RyanLua/Shime?include_prereleases"></a>
-  <a href="https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/RyanLua/Shime"></a>
-  <a href="LICENSE.txt"><img alt="GitHub" src="https://img.shields.io/github/license/RyanLua/Shime"></a>
-  <a href=".github/workflows/StyLua.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/RyanLua/Shime/StyLua.yml"></a>
+  
+  [![GitHub release](https://img.shields.io/github/v/release/RyanLua/Shime?logo=roblox)](https://github.com/RyanLua/Shime/releases)
+  [![GitHub top language](https://img.shields.io/github/languages/top/RyanLua/Shime?logo=lua)](https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code)
+  [![GitHub license](https://img.shields.io/github/license/RyanLua/Shime?logo=apache)](LICENSE.txt)
+  [![CI](https://github.com/RyanLua/Shime/actions/workflows/stylua.yml/badge.svg)](https://github.com/RyanLua/Shime/actions/workflows/stylua.yml)
 </h1>
 
 <div align="center">
@@ -74,7 +74,7 @@ Shime is easy to use. The API is simple and easy to understand. Below is a simpl
 
 ```lua
 -- Require the Shime module
-local Shime = require(12958292783)
+local Shime = require(game.ReplicatedStorage.Shime)
 
 -- Create a new Shimmer and play it
 local shimmer = Shime.new(script.Parent)
@@ -102,12 +102,18 @@ Shime has many methods and properties that allow you to customize the shimmer ef
 ### [Properties](https://github.com/RyanLua/Shime/wiki/Documentation#properties-1)
 
 | Property | Details |
-| --- | --- |
-| IsCompleted: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` has completed. |
-| IsPaused: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` is not playing. |
-| IsPlaying: [`boolean`](https://create.roblox.com/docs/scripting/luau/booleans) | This read-only property will return true when the `Shimmer` is playing. |
+| :--- | :--- |
+| PlaybackState: [`Enum.PlaybackState`](https://create.roblox.com/docs/reference/engine/enums/PlaybackState) | This read-only property will return [`Enum.PlaybackState`](https://create.roblox.com/docs/reference/engine/enums/PlaybackState). |
 
 ### [Methods](https://github.com/RyanLua/Shime/wiki/Documentation#methods-1)
+
+| GetFrame(): [`Frame`](https://create.roblox.com/docs/reference/engine/classes/Frame) |
+| :--- |
+| The GetFrame function returns the [`Frame`](https://create.roblox.com/docs/reference/engine/classes/Frame) that is used to create the shimmer effect. This frame can be customized after the shimmer is created.|
+
+| GetGradient(): [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient) |
+| :--- |
+| The GetGradient function returns the [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient) that is used to create the shimmer effect. This gradient can be customized after the shimmer is created. |
 
 | Stop(): `void` |
 | :--- |
