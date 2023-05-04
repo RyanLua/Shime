@@ -1,4 +1,4 @@
-# Contributing to Shime
+# Contributing
 
 Shime is open-sourced and welcomes contributions from the community. If you would like to contribute, please follow the guidelines below.
 
