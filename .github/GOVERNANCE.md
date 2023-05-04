@@ -1,6 +1,6 @@
-# Governance Guidelines for Shime Module
+# Governance Guidelines
 
-This document outlines the governance guidelines for the Shime module, which is owned by a single person with full power over its development and management.
+This document outlines the governance guidelines for this GitHub repository, which is owned by a single person with full power over its development and management.
 
 ## Owner Responsibilities
 The owner of the Shime module is responsible for maintaining the module's code and ensuring that it operates effectively and efficiently. The owner also has the authority to make decisions regarding the module's development and management.
