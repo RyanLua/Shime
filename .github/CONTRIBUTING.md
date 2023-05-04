@@ -1,6 +1,6 @@
 # Contributing
 
-Shime is open-sourced and welcomes contributions from the community. If you would like to contribute, please follow the guidelines below.
+We welcome contributions from the community. If you would like to contribute, please follow the guidelines below.
 
 ## Coding Style
 
