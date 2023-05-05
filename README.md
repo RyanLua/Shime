@@ -8,7 +8,7 @@
   [![GitHub release](https://img.shields.io/github/v/release/RyanLua/Shime?logo=roblox)](https://github.com/RyanLua/Shime/releases)
   [![GitHub top language](https://img.shields.io/github/languages/top/RyanLua/Shime?logo=lua)](https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code)
   [![GitHub license](https://img.shields.io/github/license/RyanLua/Shime?logo=apache)](LICENSE.txt)
-  [![CI](https://github.com/RyanLua/Shime/actions/workflows/stylua.yml/badge.svg)](https://github.com/RyanLua/Shime/actions/workflows/stylua.yml)
+  [![CI](https://github.com/RyanLua/Shime/actions/workflows/stylua.yml/badge.svg)](https://github.com/RyanLua/Shime/actions/workflows/CI.yml)
 </h1>
 
 <div align="center">
