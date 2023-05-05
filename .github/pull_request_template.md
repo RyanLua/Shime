@@ -1,3 +1,12 @@
+---
+name: Pull request
+about: Pull request template
+title: "[PR] Pull request title"
+labels: enhancement
+assignees: ''
+
+---
+
 ## Description
 
 Please provide a brief description of the changes being made in this pull request.
