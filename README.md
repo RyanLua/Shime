@@ -12,7 +12,7 @@
 </h1>
 
 <div align="center">
-Shimmer is a class required from the Shime module that allows you to easily create a shimmer effect on any GuiObject just like how Roblox does.
+  Shime is a module that allows you to easily create a shimmer effect on any GuiObject.
 </div>
 
 ## About
