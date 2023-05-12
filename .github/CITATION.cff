@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: If you want to cite Shime, please use this metadata.
+title: Shime
+abstract: Shime allows you to easily create a shimmer effect on any GuiObject on Roblox. Shime is easy to use and supports all available GuiObjects.
+authors:
+  - family-names: Luu
+    given-names: Ryan
+    orcid: https://orcid.org/0009-0004-0813-879X
+version: 1.0.0
+doi: 10.5281/zenodo.12959615382
+date-released: "2023-11-07"
+keywords:
+  - library
+  - module
+  - lua
+  - roblox
+  - lua-script
+  - roblox-studio
+  - shimmer
+  - robloxdev
+  - robloxlua
+  - luau
+  - roblox-lua
+  - roblox-api
+  - modulescript
+  - robloxscripts
+  - roblox-scripts
+  - roblox-script
+  - roblox-scripting
+license: "Apache-2.0"
+repository-code: "https://github.com/RyanLua/Shime"
