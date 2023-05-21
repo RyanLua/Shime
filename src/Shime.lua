@@ -2,7 +2,7 @@
 
 --[[
 	Name: Shime
-	Version: 1.0.0
+	Version: 1.0.1
 	Description: Shime is a module that allows you to easily create a shimmer effect on any GuiObject.
 	By: @WinnersTakesAll on Roblox & @RyanLua on GitHub
 
