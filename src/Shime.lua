@@ -8,6 +8,10 @@
 
 	Creator Marketplace: https://create.roblox.com/marketplace/asset/12959615382
 	GitHub: https://github.com/RyanLua/Shime
+
+	Wiki: https://github.com/RyanLua/Shime/wiki
+	Getting Started: https://github.com/RyanLua/Shime/wiki/Getting-Started
+	Documentation: https://github.com/RyanLua/Shime/wiki/Documentation
 ]]
 
 --[[
@@ -80,12 +84,7 @@ local function createShimmer(parent: GuiObject): Frame
 			frame.Size = UDim2.new(widthSize, widthOffset, heightSize, heightOffset)
 
 			-- Update the position of the frame so it is centered
-			frame.Position = UDim2.new(
-				0.5,
-				-widthDiffOffset / 2,
-				0.5,
-				-heightDiffOffset / 2
-			)
+			frame.Position = UDim2.new(0.5, -widthDiffOffset / 2, 0.5, -heightDiffOffset / 2)
 			print(frame.Position)
 
 			-- Update the padding offset when the UIPadding changes
@@ -128,6 +127,33 @@ function Shime.new(
 	reverses: boolean?,
 	delayTime: number?
 )
+	-- Parameter validation
+	assert(typeof(parent) == "Instance" and parent:IsA("GuiObject"), "Invalid parent argument. Expected GuiObject.")
+
+	time = time or 1
+	assert(typeof(time) == "number", "Invalid time argument. Expected number.")
+
+	style = style or Enum.EasingStyle.Linear
+	assert(
+		typeof(style) == "EnumItem" and style.EnumType == Enum.EasingStyle,
+		"Invalid style argument. Expected EasingStyle enum."
+	)
+
+	direction = direction or Enum.EasingDirection.InOut
+	assert(
+		typeof(direction) == "EnumItem" and direction.EnumType == Enum.EasingDirection,
+		"Invalid direction argument. Expected EasingDirection enum."
+	)
+
+	repeatCount = repeatCount or -1
+	assert(typeof(repeatCount) == "number", "Invalid repeatCount argument. Expected number.")
+
+	reverses = reverses or false
+	assert(typeof(reverses) == "boolean", "Invalid reverses argument. Expected boolean.")
+
+	delayTime = delayTime or 0
+	assert(typeof(delayTime) == "number", "Invalid delayTime argument. Expected number.")
+
 	local self = setmetatable({}, Shime)
 
 	-- Constants for the shimmer animation
