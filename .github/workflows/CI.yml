@@ -10,13 +10,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  stylua:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -26,11 +23,12 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Install StyLua
+        run: |
+          curl -L https://github.com/JohnnyMorganz/StyLua/releases/download/v0.11.0/stylua-0.11.0-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          sudo mv stylua /usr/local/bin/
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Run StyLua
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          stylua --check .
