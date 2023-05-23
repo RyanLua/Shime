@@ -1,0 +1,30 @@
+[package]
+# Package names are always "SCOPE/NAME"
+# They can inclde lowercase letters, numbers, and dashes.
+name = "ryanlua/shime"
+
+# Descriptions are free-form. These will be used as part of package listings
+# and search results.
+description = "Create shimmer effects on any GuiObject"
+
+# Versions follow Semantic Versioning.
+# https://semver.org/
+version = "1.0.1"
+
+# Contains an SPDX License Expression.
+# Licenses are required for publishing code to public registries.
+license = "Apache-2.0"
+
+# The author list is a free-form list, but conventionally contains names and
+# email addresses.
+authors = ["RyanLua"]
+
+# Packages belong to a "realm", which helps prevent using code in the wrong
+# context. For now, we have "server" and "shared" realms.
+# The server realm should only be used for packages which shouldn't be replicated.
+realm = "shared"
+
+# Wally supports multiple registries.
+# This feature can be used to have split public/private registries to
+# keep internal code private and isolated.
+registry = "https://github.com/upliftgames/wally-index"
