@@ -5,9 +5,9 @@
     <img src="https://user-images.githubusercontent.com/80087248/229268585-bc4ab425-809c-4a1e-a4c1-a693e861f455.png">
   </picture>
   
-  [![GitHub release](https://img.shields.io/github/v/release/RyanLua/Shime?logo=roblox)](https://github.com/RyanLua/Shime/releases)
-  [![GitHub top language](https://img.shields.io/github/languages/top/RyanLua/Shime?logo=lua)](https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code)
-  [![GitHub license](https://img.shields.io/github/license/RyanLua/Shime?logo=apache)](LICENSE.txt)
+  [![GitHub release](https://img.shields.io/github/v/release/RyanLua/Shime?logo=roblox&color=2db74c)](https://github.com/RyanLua/Shime/releases)
+  [![GitHub top language](https://img.shields.io/github/languages/top/RyanLua/Shime?logo=lua&color=2db74c)](https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code)
+  [![GitHub license](https://img.shields.io/github/license/RyanLua/Shime?logo=apache&color=2db74c)](LICENSE.txt)
   [![Lint](https://github.com/RyanLua/Shime/actions/workflows/lint.yml/badge.svg)](https://github.com/RyanLua/Shime/actions/workflows/CI.yml)
 </h1>
 
