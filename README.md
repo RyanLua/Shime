@@ -135,7 +135,7 @@ If you **have a change** you want to make, please [open a new pull request](http
 
 If you see a **bug or want a feature**, please [open an issue](https://github.com/RyanLua/Shime/issues/new/choose).
 
-To get started,**learn more about contributing** at [CONTRIBUTING.md](https://github.com/RyanLua/Shime/blob/main/.github/CONTRIBUTING.md). 
+To get started to go [CONTRIBUTING.md](https://github.com/RyanLua/Shime/blob/main/.github/CONTRIBUTING.md) on how to contribute. 
 
 ## License
 
