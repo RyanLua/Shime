@@ -129,11 +129,13 @@ The Play function starts `Shimmer`. Note that if a shimmer has already begun cal
 
 ## Contributing
 
-We worked hard to make this **open-source plugin**, so please **contribute at your will**. Go ahead and [fork this repository](https://github.com/RyanLua/Shime/fork), and maybe we will merge to ours someday.
+We worked hard to make this **open-source**, so please **contribute at your will**. Go ahead and [fork this repository](https://github.com/RyanLua/Shime/fork), and maybe we will merge together someday.
 
 If you **have a change** you want to make, please [open a new pull request](https://github.com/RyanLua/Shime/compare).
 
 If you see a **bug or want a feature**, please [open an issue](https://github.com/RyanLua/Shime/issues/new/choose).
+
+To get started,**learn more about contributing** at [CONTRIBUTING.md](https://github.com/RyanLua/Shime/blob/main/.github/CONTRIBUTING.md). 
 
 ## License
 
