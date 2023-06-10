@@ -29,7 +29,7 @@ Shime is a module that allows you to easily create a shimmer effect on any [`Gui
 
 > **Note**
 >
-> [Shimmer Demo](https://www.roblox.com/games/12865649978) has Content Sharing enabled. You can download the demo from the Roblox website by clicking the ellipsis (`...`)and selecting `Download`.
+> [Shimmer Demo](https://www.roblox.com/games/12865649978) has Content Sharing enabled. You can download the demo from the Roblox website by clicking the ellipsis (`...`)and selecting `Edit`.
 
 We provide an open-source demo of Shime, you can [view the demo](https://www.roblox.com/games/12865649978) on Roblox. Feel free to use the demo as a reference for how to use Shime and modify it to your liking.
 
