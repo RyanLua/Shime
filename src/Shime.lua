@@ -127,7 +127,6 @@ function Shime.new(
 	reverses: boolean?,
 	delayTime: number?
 )
-
 	local self = setmetatable({}, Shime)
 
 	-- Constants for the shimmer animation
