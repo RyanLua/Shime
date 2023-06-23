@@ -127,42 +127,16 @@ function Shime.new(
 	reverses: boolean?,
 	delayTime: number?
 )
-	-- Parameter validation
-	assert(typeof(parent) == "Instance" and parent:IsA("GuiObject"), "Invalid parent argument. Expected GuiObject.")
-
-	time = time or 1
-	assert(typeof(time) == "number", "Invalid time argument. Expected number.")
-
-	style = style or Enum.EasingStyle.Linear
-	assert(
-		typeof(style) == "EnumItem" and style.EnumType == Enum.EasingStyle,
-		"Invalid style argument. Expected EasingStyle enum."
-	)
-
-	direction = direction or Enum.EasingDirection.InOut
-	assert(
-		typeof(direction) == "EnumItem" and direction.EnumType == Enum.EasingDirection,
-		"Invalid direction argument. Expected EasingDirection enum."
-	)
-
-	repeatCount = repeatCount or -1
-	assert(typeof(repeatCount) == "number", "Invalid repeatCount argument. Expected number.")
-
-	reverses = reverses or false
-	assert(typeof(reverses) == "boolean", "Invalid reverses argument. Expected boolean.")
-
-	delayTime = delayTime or 0
-	assert(typeof(delayTime) == "number", "Invalid delayTime argument. Expected number.")
 
 	local self = setmetatable({}, Shime)
 
 	-- Constants for the shimmer animation
-	local EASING_TIME = time or 1 -- Time for shimmer animation
-	local EASING_STYLE = style or Enum.EasingStyle.Linear -- Easing style for shimmer animation
-	local EASING_DIRECTION = direction or Enum.EasingDirection.InOut -- Easing direction for easing style
-	local REPEAT_COUNT = repeatCount or -1 -- Repeat amount for shimmer (negative number means infinite)
-	local REVERSES = reverses or false -- Reverse direction of shimmer when it reaches the end
-	local DELAY_TIME = delayTime or 0 -- Delay between each shimmer
+	local EASING_TIME: number = time or 1 -- Time for shimmer animation
+	local EASING_STYLE: Enum.EasingStyle = style or Enum.EasingStyle.Linear -- Easing style for shimmer animation
+	local EASING_DIRECTION: Enum.EasingDirection = direction or Enum.EasingDirection.InOut -- Easing direction for easing style
+	local REPEAT_COUNT: number = repeatCount or -1 -- Repeat amount for shimmer (negative number means infinite)
+	local REVERSES: boolean = reverses or false -- Reverse direction of shimmer when it reaches the end
+	local DELAY_TIME: number = delayTime or 0 -- Delay between each shimmer
 
 	-- Create the shimmer frame and animation
 	local shimmer = createShimmer(parent)
