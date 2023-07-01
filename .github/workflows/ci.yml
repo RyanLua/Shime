@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  checks: write
+  contents: write
+
 jobs:
   run-linter:
     name: Run linter
