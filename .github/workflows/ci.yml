@@ -29,7 +29,7 @@ jobs:
       - name: Install aftman
         uses: ok-nick/setup-aftman@v0.3.0
         with: 
-          token: ${{ SECRETS.GITHUB_TOKEN }} 
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run selene
         run: |
