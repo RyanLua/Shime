@@ -43,9 +43,9 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v3
 
-       - name: Run stylua
-         uses: JohnnyMorganz/stylua-action@v3
-         with:
-           token: ${{ secrets.GITHUB_TOKEN }}
-           version: latest
-           args: --check ./src
+      - name: Run stylua
+        uses: JohnnyMorganz/stylua-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: --check ./src
