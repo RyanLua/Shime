@@ -1,36 +1,37 @@
-name: CI 
-  
- on: 
-   push: 
-     branches: 
-     - main 
-  
- jobs: 
-  
-   lint: 
-     name: Lint 
-     runs-on: ubuntu-latest 
-     steps: 
-     - name: Checkout Code 
-       uses: actions/checkout@v3 
-  
-     - uses: ok-nick/setup-aftman@v0.3.0 
-       name: Install aftman 
-       with: 
-           token: ${{ SECRETS.GITHUB_TOKEN }} 
-  
-     - name: Lint 
-       run: | 
-         selene ./src 
-  
-   style: 
-     name: Styling 
-     runs-on: ubuntu-latest 
-     steps: 
-     - uses: actions/checkout@v3 
-     - name: StyLua 
-       uses: JohnnyMorganz/stylua-action@v3 
-       with: 
-         token: ${{ secrets.GITHUB_TOKEN }} 
-         version: latest 
-         args: --check ./src
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-linter:
+    name: Run linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - uses: ok-nick/setup-aftman@v0.3.0
+        name: Install aftman
+        with: 
+          token: ${{ SECRETS.GITHUB_TOKEN }} 
+
+      - name: Run selene
+        run: |
+          selene ./src
+
+   run-styler:
+     name: Run styler
+     runs-on: ubuntu-latest
+
+     steps:
+       - uses: actions/checkout@v3
+       - name: Run stylua
+         uses: JohnnyMorganz/stylua-action@v3
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           version: latest
+           args: --check ./src
