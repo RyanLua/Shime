@@ -61,8 +61,8 @@ Shime is easy to install. They are many ways to install Shime. The links below w
 
 | Install Method | Asset Link |
 | :--- | :--- |
-| [Install from Roblox](Getting-Started#install-from-roblox) | [Shimmer - Creator Marketplace](https://create.roblox.com/marketplace/asset/12959615382) |
-| [Install from GitHub](Getting-Started#install-from-github) | [Shime - GitHub](https://github.com/RyanLua/Shime/releases)
+| [Install from Roblox](https://github.com/RyanLua/Shime/wiki/Getting-Started#install-from-roblox) | [Shimmer - Creator Marketplace](https://create.roblox.com/marketplace/asset/12959615382) |
+| [Install from GitHub](https://github.com/RyanLua/Shime/wiki/Getting-Started#install-from-github) | [Shime - GitHub](https://github.com/RyanLua/Shime/releases)
 
 ## Usage
 
