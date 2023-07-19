@@ -101,7 +101,7 @@ Shime has many methods and properties that allow you to customize the shimmer ef
 
 ### [Properties](https://github.com/RyanLua/Shime/wiki/Documentation#properties-1)
 
-| Property | Details |
+| Property | Description |
 | :--- | :--- |
 | PlaybackState: [`Enum.PlaybackState`](https://create.roblox.com/docs/reference/engine/enums/PlaybackState) | This read-only property will return [`Enum.PlaybackState`](https://create.roblox.com/docs/reference/engine/enums/PlaybackState). |
 
