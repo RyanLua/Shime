@@ -1,19 +1,21 @@
-name: "Documentation Issue"
-description: Report issues in our documentation
-title: "[DOCS]: "
-labels: ["enhancement"]
+name: "Help improve documentation"
+description: Report issues in our documentation.
+title: "Documentation: "
+labels: ["documentation"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this issue!
   - type: textarea
     attributes:
       label: Provide a description of requested docs changes
       placeholder: Briefly describe which document needs to be corrected and why.
-    validations:
-      required: true
   - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md)
+      description: This project has a Code of Conduct that all participants are expected to understand and follow.
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I have read and agree to the project's [Code of Conduct](../blob/main/CODE_OF_CONDUCT.md)
           required: true
