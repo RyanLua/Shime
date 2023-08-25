@@ -30,15 +30,15 @@
 	limitations under the License.
 ]]
 
-local Shime = {}
+local Shime: table = {}
 Shime.__index = Shime
 
-local TweenService = game:GetService("TweenService")
+local TweenService: TweenService = game:GetService("TweenService")
 
 -- Create a shimmer frame and return it
 local function createShimmer(parent: GuiObject): Frame
 	-- Create a new frame to hold the shimmer
-	local frame = Instance.new("Frame")
+	local frame: Frame = Instance.new("Frame")
 	frame.Name = "UIShimmer"
 	frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	frame.BackgroundTransparency = 0
@@ -53,10 +53,10 @@ local function createShimmer(parent: GuiObject): Frame
 	-- Update the corner radius of the frame when the UICorner or Parent changes
 	local function updateCornerRadius()
 		if frame.Parent:FindFirstChildOfClass("UICorner") then
-			local parentCorner = frame.Parent:FindFirstChildOfClass("UICorner")
+			local parentCorner: UICorner = frame.Parent:FindFirstChildOfClass("UICorner")
 
 			-- Create a new UICorner for the frame
-			local corner = Instance.new("UICorner")
+			local corner: UICorner = Instance.new("UICorner")
 			corner.CornerRadius = parentCorner.CornerRadius
 			corner.Parent = frame
 
@@ -70,16 +70,16 @@ local function createShimmer(parent: GuiObject): Frame
 	-- Update the size of the frame when the UIPadding changes
 	local function updatePaddingOffset()
 		if frame.Parent:FindFirstChildOfClass("UIPadding") then
-			local padding = frame.Parent:FindFirstChildOfClass("UIPadding")
+			local padding: UIPadding = frame.Parent:FindFirstChildOfClass("UIPadding")
 
-			local widthScale = padding.PaddingLeft.Scale + padding.PaddingRight.Scale
-			local heightScale = padding.PaddingTop.Scale + padding.PaddingBottom.Scale
-			local widthOffset = padding.PaddingLeft.Offset + padding.PaddingRight.Offset
-			local heightOffset = padding.PaddingTop.Offset + padding.PaddingBottom.Offset
-			local heightDiffOffset = padding.PaddingTop.Offset - padding.PaddingBottom.Offset
-			local widthDiffOffset = padding.PaddingLeft.Offset - padding.PaddingRight.Offset
-			local widthSize = 1 / (1 - widthScale)
-			local heightSize = 1 / (1 - heightScale)
+			local widthScale: number = padding.PaddingLeft.Scale + padding.PaddingRight.Scale
+			local heightScale: number = padding.PaddingTop.Scale + padding.PaddingBottom.Scale
+			local widthOffset: number = padding.PaddingLeft.Offset + padding.PaddingRight.Offset
+			local heightOffset: number = padding.PaddingTop.Offset + padding.PaddingBottom.Offset
+			local heightDiffOffset: number = padding.PaddingTop.Offset - padding.PaddingBottom.Offset
+			local widthDiffOffset: number = padding.PaddingLeft.Offset - padding.PaddingRight.Offset
+			local widthSize: number = 1 / (1 - widthScale)
+			local heightSize: number = 1 / (1 - heightScale)
 
 			frame.Size = UDim2.new(widthSize, widthOffset, heightSize, heightOffset)
 
@@ -98,7 +98,7 @@ local function createShimmer(parent: GuiObject): Frame
 	updatePaddingOffset()
 
 	-- Create a new gradient for the frame
-	local gradient = Instance.new("UIGradient")
+	local gradient: UIGradient = Instance.new("UIGradient")
 	gradient.Rotation = 15
 	gradient.Color = ColorSequence.new(Color3.new(1, 1, 1))
 	gradient.Transparency = NumberSequence.new({
@@ -126,8 +126,8 @@ function Shime.new(
 	repeatCount: number?,
 	reverses: boolean?,
 	delayTime: number?
-)
-	local self = setmetatable({}, Shime)
+): table
+	local self: table = setmetatable({}, Shime)
 
 	-- Constants for the shimmer animation
 	local EASING_TIME: number = time or 1 -- Time for shimmer animation
@@ -138,7 +138,7 @@ function Shime.new(
 	local DELAY_TIME: number = delayTime or 0 -- Delay between each shimmer
 
 	-- Create the shimmer frame and animation
-	local shimmer = createShimmer(parent)
+	local shimmer: Frame = createShimmer(parent)
 	self._frame = shimmer
 	self._gradient = shimmer:FindFirstChildOfClass("UIGradient")
 	self._corner = shimmer:FindFirstChildOfClass("UICorner")
