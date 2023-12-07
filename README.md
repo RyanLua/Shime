@@ -17,7 +17,7 @@
 
 ## About
 
-> **Note**
+> [!TIP]
 >
 > Visit the [Shime Wiki](https://github.com/RyanLua/Shime/wiki) for more information about Shime, including installation, usage, and documentation.
 
@@ -27,7 +27,7 @@ Shime is a module that allows you to easily create a shimmer effect on any [`Gui
 
 ## Demo
 
-> **Note**
+> [!NOTE]
 >
 > [Shimmer Demo](https://www.roblox.com/games/12865649978) has Content Sharing enabled. You can download the demo from the Roblox website by clicking the ellipsis (`...`)and selecting `Edit`.
 
@@ -53,7 +53,7 @@ Shime has its own GitHub Wiki with an included [Getting Started](https://github.
 
 ## Installation
 
-> **Note**
+> [!NOTE]
 >
 > Visit the [**Installation**](https://github.com/RyanLua/Shime/wiki/Getting-Started#installation) page more information on installation. Below is a quick summary of the installation methods.
 
@@ -66,7 +66,7 @@ Shime is easy to install. They are many ways to install Shime. The links below w
 
 ## Usage
 
-> **Note**
+> [!NOTE]
 >
 > Visit the [**Usage**](https://github.com/RyanLua/Shime/wiki/Getting-Started#usage) page more information on usage, including additional code samples.
 
@@ -83,7 +83,7 @@ shimmer:Play()
 
 ## Documentation
 
-> **Note**
+> [!NOTE]
 >
 > Visit the [**Documentation**](https://github.com/RyanLua/Shime/wiki/Documentation) page more information on the Shime module and more details about Shime Constructors, Methods, and Properties.
 
