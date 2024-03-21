@@ -9,6 +9,8 @@
   [![GitHub top language](https://img.shields.io/github/languages/top/RyanLua/Shime?logo=lua&color=2db74c)](https://github.com/search?q=repo%3ARyanLua%2FShime++language%3ALua&type=code)
   [![GitHub license](https://img.shields.io/github/license/RyanLua/Shime?logo=apache&color=2db74c)](LICENSE.txt)
   [![Lint](https://github.com/RyanLua/Shime/actions/workflows/ci.yml/badge.svg)](https://github.com/RyanLua/Shime/actions/workflows/CI.yml)
+  [![Discord](https://img.shields.io/discord/1162303282002272359?label=discord&logo=discord&logoColor=white&color=2db74c)](https://discord.gg/hYU4rvT7DK)
+
 </h1>
 
 <div align="center">
