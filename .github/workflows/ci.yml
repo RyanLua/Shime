@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install aftman
         uses: ok-nick/setup-aftman@v0.3.0
@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run stylua
         uses: JohnnyMorganz/stylua-action@v3
