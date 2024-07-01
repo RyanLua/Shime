@@ -1,0 +1,36 @@
+{
+	"name": "Roblox",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+
+	"features": {
+		"ghcr.io/ryanlua/features/rojo:latest": {
+			"version": "latest",
+			"installAftman": "true"
+		}
+	},
+
+	"forwardPorts": [
+		34872
+	],
+	"portsAttributes": {
+		"34872": {
+			"label": "Rojo",
+			"onAutoForward": "notify"
+		}
+	},
+
+	"postCreateCommand": "aftman install --no-trust-check",
+
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"kampfkarren.selene-vscode",
+				"johnnymorganz.stylua",
+				"johnnymorganz.luau-lsp"
+			]
+		}
+	},
+
+	"remoteUser": "root"
+}
