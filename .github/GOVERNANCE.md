@@ -17,7 +17,7 @@ All contributors and users of the Shime module are expected to adhere to the fol
 * Contribute positively and constructively to discussions and development.
 * Maintain confidentiality of any sensitive information related to the module.
 
-The owner reserves the right to remove any contributor or user who violates the code of conduct. Learn more at [CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md)
+The owner reserves the right to remove any contributor or user who violates the code of conduct. Learn more at [CODE_OF_CONDUCT.md](https://github.com/RyanLua/Shime?tab=coc-ov-file)
 
 ## Decision Making
 As the sole owner of the Shime module, the owner has full decision-making power over the module's development and management. The owner may seek input and advice from contributors and users, but the final decision rests with the owner.
